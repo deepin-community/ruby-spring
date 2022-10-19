@@ -1,0 +1,13 @@
+Description: do not declare dev dependency on bump (not packaged)
+Author: Cédric Boutillier <boutil@debian.org>
+Last-Update: 2019-01-17
+
+--- a/spring.gemspec
++++ b/spring.gemspec
+@@ -16,6 +16,5 @@
+   gem.required_ruby_version = ">= 2.4.0"
+ 
+   gem.add_development_dependency 'rake'
+-  gem.add_development_dependency 'bump'
+   gem.add_development_dependency 'activesupport'
+ end

@@ -1,0 +1,5 @@
+Tests: smoke-test
+Depends: bundler,
+         ruby-activesupport,
+         @
+Restrictions: allow-stderr

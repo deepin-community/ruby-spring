@@ -1,0 +1,19 @@
+This patch adjusts the Gemfile.
+Author: Pirate Praveen <praveen@debian.org>
+---
+
+--- a/Gemfile
++++ b/Gemfile
+@@ -1,7 +1,10 @@
+ source 'https://rubygems.org'
+ 
+-# Specify your gem's dependencies in spring.gemspec
+-gemspec
++if ENV['AUTOPKGTEST_TMP']
++  gem 'spring'
++else
++  gemspec
++end
+ 
+ if ENV["RAILS_VERSION"]
+   gem "activesupport", ENV["RAILS_VERSION"]

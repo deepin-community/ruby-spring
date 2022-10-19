@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -ex
+exec 2>&1
+
+# Test for #921718 (gem layout expected for relative path to bin)
+cd $AUTOPKGTEST_TMP
+cat > Gemfile <<GEMFILE
+gem "spring"
+GEMFILE
+mkdir -p config
+echo 'puts "dummy app"' >config/application.rb
+ruby -r spring/binstub -e 'puts "ok"' 2>&1

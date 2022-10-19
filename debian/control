@@ -1,0 +1,28 @@
+Source: ruby-spring
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Cédric Boutillier <boutil@debian.org>,
+ Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb,
+               ruby-activesupport (>= 2:4.2),
+               rake
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-spring.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-spring
+Homepage: https://github.com/rails/spring
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-spring
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${ruby:Depends},
+         ${shlibs:Depends}
+Description: Rails application preloader
+ Spring is a Rails application preloader. It speeds up development by
+ keeping your application running in the background so you don't need to
+ boot it every time you run a test, rake task or migration.

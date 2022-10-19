@@ -1,0 +1,16 @@
+Description: fix syntax for ruby3.0
+Bug-Debian: https://bugs.debian.org/996510
+Author: Cédric Boutillier <boutil@debian.org>
+Last-Update: 2021-10-26
+
+--- a/test/support/watcher_test.rb
++++ b/test/support/watcher_test.rb
+@@ -33,7 +33,7 @@
+       def touch(file, mtime = nil)
+         options = {}
+         options[:mtime] = mtime if mtime
+-        FileUtils.touch(file, options)
++        FileUtils.touch(file, **options)
+       end
+ 
+       def assert_stale
